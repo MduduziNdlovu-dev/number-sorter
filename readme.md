@@ -1,7 +1,7 @@
 # Number Sorter
-![alt text](image.png)
+![alt text](image-1.png)
 
-## Demo: 
+## Demo: https://mduduzindlovu-dev.github.io/number-sorter/
 ## Overview
 
 Number Sorter is a web application that allows users to input an array of numbers and sort them using various sorting algorithms. The user can choose between different sorting algorithms such as Bubble Sort, Selection Sort, and Insertion Sort. After the sorting operation, the sorted array is displayed on the UI.
