@@ -32,9 +32,4 @@ Additionally, the app features a dark mode toggle for enhanced user experience.
 
 Click the 🌙/☀️ button in the top-right corner to toggle between light and dark modes. The app remembers your theme preference across sessions.
 
-## Setup Instructions
 
-### 1. Clone the repository:
-
-```bash
-git clone <repository_url>
