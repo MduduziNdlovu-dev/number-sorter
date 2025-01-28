@@ -45,70 +45,67 @@ const sortInputArray = (event) => {
 
 const displayAlgorithmInfo = (algorithm) => {
     let info = "";
+    let description = "";
+    let timeComplexity = "";
+    let spaceComplexity = "";
+    
     switch (algorithm) {
       case "bubbleSort":
-        info = `
-          <h3>Bubble Sort</h3>
-          <p>Bubble Sort is a simple comparison-based algorithm. It repeatedly steps through the list, compares adjacent elements, and swaps them if they are in the wrong order. This process continues until the list is sorted.</p>
-          <p><strong>Time Complexity:</strong> O(n²)</p>
-          <p><strong>Space Complexity:</strong> O(1)</p>
-        `;
+        description = "Bubble Sort is a simple comparison-based algorithm. It repeatedly steps through the list, compares adjacent elements, and swaps them if they are in the wrong order. This process continues until the list is sorted.";
+        timeComplexity = "O(n²)";
+        spaceComplexity = "O(1)";
         break;
       case "selectionSort":
-        info = `
-          <h3>Selection Sort</h3>
-          <p>Selection Sort works by repeatedly finding the minimum element from the unsorted part of the list and swapping it with the first unsorted element. It continues until the entire list is sorted.</p>
-          <p><strong>Time Complexity:</strong> O(n²)</p>
-          <p><strong>Space Complexity:</strong> O(1)</p>
-        `;
+        description = "Selection Sort works by repeatedly finding the minimum element from the unsorted part of the list and swapping it with the first unsorted element. It continues until the entire list is sorted.";
+        timeComplexity = "O(n²)";
+        spaceComplexity = "O(1)";
         break;
       case "insertionSort":
-        info = `
-          <h3>Insertion Sort</h3>
-          <p>Insertion Sort builds the final sorted array one element at a time. It takes each element from the unsorted portion and places it in its correct position in the sorted portion.</p>
-          <p><strong>Time Complexity:</strong> O(n²)</p>
-          <p><strong>Space Complexity:</strong> O(1)</p>
-        `;
+        description = "Insertion Sort builds the final sorted array one element at a time. It takes each element from the unsorted portion and places it in its correct position in the sorted portion.";
+        timeComplexity = "O(n²)";
+        spaceComplexity = "O(1)";
         break;
-        case 'quick':
-            info = `
-                <h3>Quick Sort</h3>
-                <p><strong>Time Complexity:</strong> Best: O(n log n), Worst: O(n²)</p>
-                <p><strong>Space Complexity:</strong> O(log n)</p>
-                <p><strong>Explanation:</strong> Quick Sort is a divide-and-conquer algorithm that selects a pivot and partitions the array into two sub-arrays. It then recursively sorts these sub-arrays. It's fast on average but can degrade to O(n²) with poor pivot selection.</p>
-            `;
-            break;
-        case 'merge':
-            info = `
-                <h3>Merge Sort</h3>
-                <p><strong>Time Complexity:</strong> Best: O(n log n), Worst: O(n log n)</p>
-                <p><strong>Space Complexity:</strong> O(n)</p>
-                <p><strong>Explanation:</strong> Merge Sort is a divide-and-conquer algorithm that divides the array into two halves, recursively sorts them, and merges them. It guarantees O(n log n) time complexity and is stable.</p>
-            `;
-            break;
-        case 'heap':
-            info = `
-                <h3>Heap Sort</h3>
-                <p><strong>Time Complexity:</strong> Best: O(n log n), Worst: O(n log n)</p>
-                <p><strong>Space Complexity:</strong> O(1)</p>
-                <p><strong>Explanation:</strong> Heap Sort uses a binary heap to repeatedly extract the maximum element and place it at the end of the array. It guarantees O(n log n) time complexity and works in-place.</p>
-            `;
-            break;
-        case 'radix':
-            info = `
-                <h3>Radix Sort</h3>
-                <p><strong>Time Complexity:</strong> Best: O(nk), Worst: O(nk)</p>
-                <p><strong>Space Complexity:</strong> O(n)</p>
-                <p><strong>Explanation:</strong> Radix Sort is a non-comparative sorting algorithm that sorts numbers by processing each digit individually. It's efficient for large datasets with small ranges of values, but its performance depends on the number of digits.</p>
-            `;
-            break;
-        default:
-            info = '';
-            break;
+      case 'quick':
+        description = "Quick Sort is a divide-and-conquer algorithm that selects a pivot and partitions the array into two sub-arrays. It then recursively sorts these sub-arrays. It's fast on average but can degrade to O(n²) with poor pivot selection.";
+        timeComplexity = "Best: O(n log n), Worst: O(n²)";
+        spaceComplexity = "O(log n)";
+        break;
+      case 'merge':
+        description = "Merge Sort is a divide-and-conquer algorithm that divides the array into two halves, recursively sorts them, and merges them. It guarantees O(n log n) time complexity and is stable.";
+        timeComplexity = "Best: O(n log n), Worst: O(n log n)";
+        spaceComplexity = "O(n)";
+        break;
+      case 'heap':
+        description = "Heap Sort uses a binary heap to repeatedly extract the maximum element and place it at the end of the array. It guarantees O(n log n) time complexity and works in-place.";
+        timeComplexity = "Best: O(n log n), Worst: O(n log n)";
+        spaceComplexity = "O(1)";
+        break;
+      case 'radix':
+        description = "Radix Sort is a non-comparative sorting algorithm that sorts numbers by processing each digit individually. It's efficient for large datasets with small ranges of values, but its performance depends on the number of digits.";
+        timeComplexity = "Best: O(nk), Worst: O(nk)";
+        spaceComplexity = "O(n)";
+        break;
+      default:
+        description = "";
+        timeComplexity = "";
+        spaceComplexity = "";
+        break;
     }
+
+    info = `
+      <div class="algorithm-info">
+        <h3 class="algorithm-title">${algorithm.charAt(0).toUpperCase() + algorithm.slice(1).replace(/([A-Z])/g, ' $1')}</h3>
+        <p class="algorithm-description">${description}</p>
+        <div class="complexity">
+          <p><strong>Time Complexity:</strong> ${timeComplexity}</p>
+          <p><strong>Space Complexity:</strong> ${spaceComplexity}</p>
+        </div>
+      </div>
+    `;
     
     algorithmInfo.innerHTML = info;
-  };
+};
+
 
 const updateUI = (array = []) => {
     array.forEach((num, i) => {

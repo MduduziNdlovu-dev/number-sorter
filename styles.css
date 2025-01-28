@@ -192,5 +192,71 @@ select {
     outline: 2px solid var(--primary-color);
   }
   
+  .algorithm-info {
+    background-color: #f4f4f4;
+    padding: 20px;
+    border-radius: 8px;
+    box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+    margin-top: 20px;
+    font-family: Arial, sans-serif;
+  }
+  
+  .algorithm-title {
+    font-size: 24px;
+    font-weight: bold;
+    color: #2d3e50;
+    margin-bottom: 10px;
+  }
+  
+  .algorithm-description {
+    font-size: 16px;
+    line-height: 1.6;
+    color: #555;
+    margin-bottom: 10px;
+  }
+  
+  .complexity {
+    margin-top: 10px;
+  }
+  
+  .complexity p {
+    font-size: 16px;
+    color: #333;
+    margin: 5px 0;
+  }
+  
+  .complexity strong {
+    color: #2d3e50;
+  }
+  
+  .algorithm-info h3,
+  .algorithm-info p {
+    transition: all 0.3s ease;
+  }
+  
+  /* Hover effect for the whole info box */
+  .algorithm-info:hover {
+    background-color: #e0e0e0;
+  }
+  
+  /* Dark mode styles */
+  body.dark .algorithm-info {
+    background-color: #333;
+    color: white;
+  }
+  
+  body.dark .algorithm-title {
+    color: #f1f1f1;
+  }
+  
+  body.dark .algorithm-description,
+  body.dark .complexity p {
+    color: #ddd;
+  }
+  
+  body.dark .complexity strong {
+    color: #f1f1f1;
+  }
+  
   
   
