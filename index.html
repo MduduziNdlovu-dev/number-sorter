@@ -114,8 +114,17 @@
           </div>
           <span class="bracket">]</span>
         </fieldset>
+
+        <h2>Choose Sorting Algorithm:</h2>
+        <select id="algorithm-select" aria-label="Select sorting algorithm">
+            <option value="bubbleSort">Bubble Sort</option>
+            <option value="selectionSort">Selection Sort</option>
+            <option value="insertionSort">Insertion Sort</option>
+        </select>
+
         <button id="sort">Sort</button>
       </form>
+
       <div class="output-container">
         <h2>Output:</h2>
         <div class="output-array">
@@ -141,6 +150,9 @@
           </div>
             <span class="bracket">]</span>
         </div>
+
+        <div id="algorithm-info" class="algorithm-info"></div>
+
       </div>
     </main>
     <script src="./script.js"></script>
