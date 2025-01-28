@@ -1,0 +1,110 @@
+:root {
+    --primary-color: #4f46e5;
+    --secondary-color: #6366f1;
+    --background-color: #f9fafb;
+    --text-color: #1f2937;
+    --form-bg-color: #ffffff;
+    --input-bg-color: #e5e7eb;
+    --border-color: #d1d5db;
+    --shadow-color: rgba(0, 0, 0, 0.1);
+    --transition-speed: 0.3s;
+  }
+  
+  body.dark {
+    --background-color: #1f2937;
+    --text-color: #f3f4f6;
+    --form-bg-color: #374151;
+    --input-bg-color: #4b5563;
+    --border-color: #6b7280;
+    --shadow-color: rgba(0, 0, 0, 0.5);
+  }
+  
+  body {
+    background-color: var(--background-color);
+    color: var(--text-color);
+    font-family: Arial, sans-serif;
+    transition: background-color var(--transition-speed), color var(--transition-speed);
+  }
+  
+  h1, h2 {
+    margin: 0 0 1rem;
+  }
+  
+  .header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 1.5rem;
+  }
+  
+  button#theme-toggle {
+    padding: 0.5rem 1rem;
+    font-size: 1.2rem;
+    border: none;
+    background: var(--form-bg-color);
+    color: var(--text-color);
+    border-radius: 8px;
+    cursor: pointer;
+    transition: transform var(--transition-speed), background-color var(--transition-speed);
+  }
+  
+  button#theme-toggle:hover {
+    transform: scale(1.1);
+    background: var(--input-bg-color);
+  }
+  
+  form {
+    background-color: var(--form-bg-color);
+    padding: 1.5rem;
+    border-radius: 8px;
+    box-shadow: 0 4px 6px var(--shadow-color);
+    border: 1px solid var(--border-color);
+  }
+  
+  fieldset {
+    border: none;
+    display: flex;
+    align-items: center;
+    flex-wrap: wrap;
+  }
+  
+  .values-dropdown {
+    background-color: var(--input-bg-color);
+    color: var(--text-color);
+    border: 1px solid var(--border-color);
+    padding: 0.5rem;
+    border-radius: 4px;
+    margin: 0.5rem;
+    transition: background-color var(--transition-speed), color var(--transition-speed);
+  }
+  
+  .values-dropdown:focus {
+    outline: 2px solid var(--primary-color);
+  }
+  
+  .output-container {
+    margin-top: 2rem;
+  }
+  
+  .output-array {
+    display: flex;
+    align-items: center;
+    flex-wrap: wrap;
+  }
+  
+  .output-value {
+    background-color: var(--input-bg-color);
+    color: var(--text-color);
+    padding: 0.5rem;
+    margin: 0.25rem;
+    border-radius: 4px;
+    text-align: center;
+    width: 2rem;
+    transition: background-color var(--transition-speed), color var(--transition-speed);
+  }
+  
+  .bracket, .comma {
+    margin: 0 0.25rem;
+    font-weight: bold;
+  }
+  
